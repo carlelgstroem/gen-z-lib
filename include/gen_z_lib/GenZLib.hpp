@@ -15,6 +15,10 @@ namespace GenZLib {
 
         // Added rizz_print function
         void rizz_print(const std::string& message);
+
+        // Add get random slang function
+        std::string getGenZSlang(); // Declaration of the new function
+
     };
 
 } // namespace GenZLib
