@@ -12,6 +12,9 @@ namespace GenZLib {
 
         // Reverses a string
         std::string reverseString(const std::string& input);
+
+        // Added rizz_print function
+        void rizz_print(const std::string& message);
     };
 
 } // namespace GenZLib

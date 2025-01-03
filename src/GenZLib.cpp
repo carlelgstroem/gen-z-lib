@@ -14,4 +14,9 @@ namespace GenZLib {
         return std::string(input.rbegin(), input.rend());
     }
 
+    void GenZ::rizz_print(const std::string& message) {
+        // Using printf to print the message
+        printf("%s\n", message.c_str());
+    }
+
 } // namespace GenZLib
