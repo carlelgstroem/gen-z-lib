@@ -4,6 +4,7 @@
 #include <vector>
 #include <random>
 #include <ctime>
+#include <iostream> // Add this line for log_entry definition
 
 namespace GenZLib {
 
@@ -55,6 +56,13 @@ namespace GenZLib {
 
         // Select and return a random slang word
         return slangWords[dist(rng)];
+
+        
+    }
+
+    void GenZ::sheeshLog(const std::string& message) {
+        // Prefix the message with "Sheesh!" and print using printf
+        std::cout << "Sheeeesh! " << message << std::endl; 
     }
 
 } // namespace GenZLib

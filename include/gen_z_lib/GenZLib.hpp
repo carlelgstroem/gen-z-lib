@@ -19,6 +19,9 @@ namespace GenZLib {
         // Add get random slang function
         std::string getGenZSlang(); // Declaration of the new function
 
+        // Add sheeshLog function
+        void sheeshLog(const std::string& message);
+
     };
 
 } // namespace GenZLib
