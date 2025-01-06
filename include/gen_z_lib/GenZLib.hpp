@@ -22,6 +22,8 @@ namespace GenZLib {
         // Add sheeshLog function
         void sheeshLog(const std::string& message);
 
+        //Added getRandomEmoji 
+        std::string getRandomEmoji();
     };
 
 } // namespace GenZLib

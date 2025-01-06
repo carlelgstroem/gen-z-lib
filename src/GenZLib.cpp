@@ -65,4 +65,11 @@ namespace GenZLib {
         std::cout << "Sheeeesh! " << message << std::endl; 
     }
 
+    std::string getRandomEmoji() {
+        std::vector<std::string> emoji_bank = {
+            "💅", "✨", "🔥", "💀", "🙌", "😤", "🫡", "💯", "😎", "🤩"
+        };
+        int random_index = rand() % emoji_bank.size();
+        return emoji_bank[random_index];
+    }
 } // namespace GenZLib
