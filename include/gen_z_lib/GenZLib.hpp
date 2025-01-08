@@ -24,6 +24,9 @@ namespace GenZLib {
 
         //Added getRandomEmoji 
         std::string getRandomEmoji();
+          
+        //Added genZ speak converter
+        std::string convtZspeak(const std::string& input);
     };
 
 } // namespace GenZLib
