@@ -4,6 +4,9 @@
 #include <vector>
 #include <random>
 #include <ctime>
+#include <unordered_map>
+#include <algorithm>
+#include <sstream>
 #include <iostream> // Add this line for log_entry definition
 
 namespace GenZLib {
@@ -63,6 +66,60 @@ namespace GenZLib {
     void GenZ::sheeshLog(const std::string& message) {
         // Prefix the message with "Sheesh!" and print using printf
         std::cout << "Sheeeesh! " << message << std::endl; 
+    }
+
+    std::string getRandomEmoji() {
+        std::vector<std::string> emojiBank = {
+            "💅", "✨", "🔥", "💀", "🙌", "😤", "🫡", "💯", "😎", "🤩"
+        };
+        int randomIndex = rand() % emojiBank.size();
+        return emojiBank[randomIndex];
+    }
+
+    std::string convtZspeak(const std::string &input){
+        std::unordered_map<std::string, std::string> genzDictionary = {
+            {"hello", "yo"},
+            {"hi", "hey"},
+            {"cool", "skibidi"},
+            {"amazing", "fire"},
+            {"good", "goated"},
+            {"bad", "mid"},
+            {"yes", "bet"},
+            {"no", "nah"},
+            {"friend", "bestie"},
+            {"angry", "pressed"},
+            {"excited", "hyped"},
+            {"great", "sigma"},
+            {"tired", "done"},
+            {"party", "vibe"},
+            {"work", "grind"},
+            {"money", "bag"}};
+
+        std::string lowerInput = input;
+        std::transform(lowerInput.begin(), lowerInput.end(), lowerInput.begin(), ::tolower);
+
+        std::stringstream ss(lowerInput);
+        std::string word, zString;
+        while (ss >> word)
+        {
+            if (genzDictionary.find(word) != genzDictionary.end())
+            {
+                zString += genzDictionary[word] + " ";
+            }
+            else
+            {
+                zString += word + " ";
+            }
+        }
+
+        if (!zString.empty())
+        {
+            zString.pop_back();
+        }
+
+        zString += " " + getRandomEmoji();
+
+        return zString;
     }
 
 } // namespace GenZLib
